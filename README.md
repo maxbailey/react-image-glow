@@ -27,11 +27,9 @@ Wrap any `<img>` element with the `ImageGlow` component to apply a glowing effec
 ```tsx
 import ImageGlow from 'react-image-glow';
 
-const App = () => (
-  <ImageGlow>
-    <img src="https://picsum.photos/300" alt="Placeholder" />
-  </ImageGlow>
-);
+<ImageGlow>
+  <img src="https://picsum.photos/300" alt="Placeholder" />
+</ImageGlow>
 ```
 
 ### Advanced Example with Custom Properties
@@ -39,15 +37,18 @@ const App = () => (
 ```tsx
 import ImageGlow from 'react-image-glow';
 
-const App = () => (
-  <ImageGlow radius={30} saturation={1.5} opacity={0.8} className="example">
-    <img
-      src="https://picsum.photos/300"
-      alt="Placeholder"
-      className="max-w-[300px]"
-    />
-  </ImageGlow>
-);
+<ImageGlow
+  radius={30}
+  saturation={1.5}
+  opacity={0.8}
+  className="example"
+>
+  <img
+    src="https://picsum.photos/300"
+    alt="Placeholder"
+    className="max-w-[300px]"
+  />
+</ImageGlow>
 ```
 
 ## Props
