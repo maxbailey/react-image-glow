@@ -30,7 +30,7 @@ import ImageGlow from 'react-image-glow';
 
 const App = () => (
   <ImageGlow>
-    <img src="https://via.placeholder.com/300" alt="Sample" />
+    <img src="https://picsum.photos/300" alt="Placeholder" />
   </ImageGlow>
 );
 
@@ -44,11 +44,11 @@ import React from 'react';
 import ImageGlow from 'react-image-glow';
 
 const App = () => (
-  <ImageGlow radius={30} saturation={1.5} opacity={0.8} className="custom-glow">
+  <ImageGlow radius={30} saturation={1.5} opacity={0.8} className="example">
     <img
-      src="https://via.placeholder.com/300"
-      alt="Advanced Sample"
-      style={{ borderRadius: '15px' }}
+      src="https://picsum.photos/300"
+      alt="Placeholder"
+      className="max-w-[300px]"
     />
   </ImageGlow>
 );
