@@ -1,17 +1,16 @@
-import React, { CSSProperties, FC, ReactElement, ReactNode } from 'react';
+import React, {
+  CSSProperties,
+  FC,
+  ReactElement,
+  ImgHTMLAttributes,
+} from 'react';
 
 interface ImageGlowProps {
-  children: ReactNode;
+  children: ReactElement<ImgHTMLAttributes<HTMLImageElement>>;
   radius?: number;
   saturation?: number;
   opacity?: number;
   className?: string;
-}
-
-function isImageElement(
-  element: ReactNode
-): element is ReactElement<React.ImgHTMLAttributes<HTMLImageElement>> {
-  return React.isValidElement(element) && element.type === 'img';
 }
 
 const parentStyle: CSSProperties = {
@@ -46,12 +45,14 @@ const ImageGlow: FC<ImageGlowProps> = ({
   opacity = 1,
   className = '',
 }) => {
-  if (!isImageElement(children)) {
-    console.error('ImageGlow expects a single <img> element as its child.');
+  if (!React.isValidElement(children)) {
+    console.error('ImageGlow requires a valid React element as its child.');
     return null;
   }
 
-  const baseImage = children.props.src ?? '';
+  const { src, style: childStyle, className: childClassName } = children.props;
+
+  const baseImage = src ?? '';
 
   const glowStyle: CSSProperties = {
     position: 'relative',
@@ -62,8 +63,8 @@ const ImageGlow: FC<ImageGlowProps> = ({
   };
 
   const styledImage = React.cloneElement(children, {
-    style: { ...glowStyle, ...(children.props.style || {}) },
-    className: `${children.props.className || ''} ${className}`.trim(),
+    style: { ...glowStyle, ...(childStyle || {}) },
+    className: `${childClassName || ''} ${className}`.trim(),
   });
 
   return (

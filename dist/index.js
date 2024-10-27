@@ -7,9 +7,6 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-function isImageElement(element) {
-    return React__default["default"].isValidElement(element) && element.type === 'img';
-}
 var parentStyle = {
     position: 'relative',
     display: 'inline-block',
@@ -29,13 +26,13 @@ var blurStyle = function (baseImage, radius, saturation, opacity) { return ({
     zIndex: 0,
 }); };
 var ImageGlow = function (_a) {
-    var _b;
-    var children = _a.children, _c = _a.radius, radius = _c === void 0 ? 50 : _c, _d = _a.saturation, saturation = _d === void 0 ? 2 : _d, _e = _a.opacity, opacity = _e === void 0 ? 1 : _e, _f = _a.className, className = _f === void 0 ? '' : _f;
-    if (!isImageElement(children)) {
-        console.error('ImageGlow expects a single <img> element as its child.');
+    var children = _a.children, _b = _a.radius, radius = _b === void 0 ? 50 : _b, _c = _a.saturation, saturation = _c === void 0 ? 2 : _c, _d = _a.opacity, opacity = _d === void 0 ? 1 : _d, _e = _a.className, className = _e === void 0 ? '' : _e;
+    if (!React__default["default"].isValidElement(children)) {
+        console.error('ImageGlow requires a valid React element as its child.');
         return null;
     }
-    var baseImage = (_b = children.props.src) !== null && _b !== void 0 ? _b : '';
+    var _f = children.props, src = _f.src, childStyle = _f.style, childClassName = _f.className;
+    var baseImage = src !== null && src !== void 0 ? src : '';
     var glowStyle = {
         position: 'relative',
         zIndex: 1,
@@ -44,8 +41,8 @@ var ImageGlow = function (_a) {
         height: 'auto',
     };
     var styledImage = React__default["default"].cloneElement(children, {
-        style: tslib.__assign(tslib.__assign({}, glowStyle), (children.props.style || {})),
-        className: "".concat(children.props.className || '', " ").concat(className).trim(),
+        style: tslib.__assign(tslib.__assign({}, glowStyle), (childStyle || {})),
+        className: "".concat(childClassName || '', " ").concat(className).trim(),
     });
     return (React__default["default"].createElement("div", { style: parentStyle },
         styledImage,

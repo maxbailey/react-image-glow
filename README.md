@@ -20,7 +20,7 @@ yarn add react-image-glow
 
 ## Usage
 
-Wrap any `<img>` element with the `ImageGlow` component to apply a glowing effect. You can customize the intensity of the glow with optional props.
+Wrap any `<img>`, `<motion.img>`, or `<Image>` element with the `<ImageGlow>` component to apply a glowing effect. You can customize the intensity of the glow with optional props.
 
 ### Basic Example
 
@@ -55,7 +55,7 @@ import ImageGlow from 'react-image-glow';
 
 | Prop        | Type      | Default | Description                                                                                 |
 |-------------|-----------|---------|---------------------------------------------------------------------------------------------|
-| `children`  | `ReactNode` | N/A     | A single `<img>` element. The component expects exactly one `<img>` as its child.          |
+| `children`  | `ReactNode` | N/A     | A single `<img>`, `<motion.img>`, or `<Image>` element as its child.                      |
 | `radius`    | `number`  | `50`    | The radius of the blur effect applied to the background.                                    |
 | `saturation`| `number`  | `2`     | Saturation level for the glowing background. A higher value increases the intensity of colors. |
 | `opacity`   | `number`  | `1`     | The opacity of the glowing background (0 = fully transparent, 1 = fully opaque).            |
@@ -63,7 +63,7 @@ import ImageGlow from 'react-image-glow';
 
 ## Error Handling
 
-- **ImageGlow expects a single `<img>` element** as its child. If the child element is not an `<img>`, an error will be logged to the console.
+- **ImageGlow expects a single `<img>`, `<motion.img>`, or `<Image>` element** as its child. If no child element is present, an error will be logged to the console.
 
 ## Styling
 
@@ -72,7 +72,7 @@ The component uses inline styles for layout, ensuring the glowing effect aligns 
 ## How It Works
 
 The `ImageGlow` component creates two layers:
-1. **Base Image Layer**: The provided `<img>` element is displayed with any custom styles or classes.
+1. **Base Image Layer**: The provided `<img>`, `<motion.img>`, or `<Image>` element is displayed with any custom styles or classes.
 2. **Glow Layer**: A blurred, saturated, and optionally semi-transparent version of the image is placed behind the original image to create a glow effect.
 
 This is achieved using CSS properties like `filter: blur` and `saturate` to manipulate the image’s background.

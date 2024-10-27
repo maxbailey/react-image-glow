@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement, ImgHTMLAttributes } from 'react';
 interface ImageGlowProps {
-    children: ReactNode;
+    children: ReactElement<ImgHTMLAttributes<HTMLImageElement>>;
     radius?: number;
     saturation?: number;
     opacity?: number;
