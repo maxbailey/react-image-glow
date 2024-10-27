@@ -1,12 +1,42 @@
 {
   "name": "react-image-glow",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "version": "1.0.1",
   "author": "Max Bailey",
+  "description": "A simple React component that adds glow to an image, similar to YouTube ambient mode.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "keywords": ["react", "image", "glow", "ambient", "youtube"],
   "license": "ISC",
-  "description": ""
+  "homepage": "https://github.com/maxbailey/react-image-glow",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxbailey/react-image-glow"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "^12.1.1",
+    "tslib": "^2.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.6.3"
+  }
 }
