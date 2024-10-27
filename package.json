@@ -1,6 +1,6 @@
 {
   "name": "react-image-glow",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Max Bailey",
   "description": "A simple React component that adds glow to an image, similar to YouTube ambient mode.",
   "main": "dist/index.js",
